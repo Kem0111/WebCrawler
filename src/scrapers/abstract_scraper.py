@@ -1,9 +1,8 @@
 from abc import ABC, abstractmethod
 import asyncio
 from collections import deque
-from ctypes import Union
 from itertools import chain
-from typing import AsyncGenerator, List
+from typing import AsyncGenerator, List, Union
 from urllib.parse import urlparse
 
 from aiohttp import ClientSession
@@ -57,7 +56,7 @@ class Scraper(ABC):
 
             current_deep += 1
 
-        # gives the remaining links in the queue
+        # send the remaining links in the queue
         for _ in range(len(self.queue)):
             yield self.queue.popleft()
 

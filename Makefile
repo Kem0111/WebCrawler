@@ -1,2 +1,8 @@
-staticscraper:
-	poetry run python3 src/scrapers/staticscraper.py
+install:
+	poetry install
+
+start:
+	poetry run start
+
+create_csv_with_results:
+	poetry run create-csv

@@ -4,6 +4,15 @@ from src.db.abstact_db_manager import AbstractDatabaseManager
 
 
 class DatabaseController:
+    """
+    Database controller for executing queries and managing the database
+    connection. This class follows the Repository pattern.
+
+    This class leverages an instance of a class derived from
+    AbstractDatabaseManager to perform database operations such as
+    executing queries and closing the database connection.
+
+    """
 
     def __init__(self, manager: AbstractDatabaseManager):
         self.manager = manager

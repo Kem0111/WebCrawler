@@ -15,6 +15,9 @@ aiohttp = "^3.8.4"
 pyppeteer = "^1.0.2"
 requests-html = "^0.10.0"
 
+[tool.poetry.scripts]
+start = "src.scripts.main:main"
+create-csv = "src.scripts.create_csv_with_results:main"
 
 [build-system]
 requires = ["poetry-core"]
