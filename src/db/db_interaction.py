@@ -9,6 +9,6 @@ def handle_database_interaction(query: str,
     try:
         db_manager = SQLiteManager('db.sqlite3')
         controller = DatabaseController(db_manager)
-        controller.execute_query(query, params)
+        return controller.execute_query(query, params)
     finally:
         controller.close_connection()

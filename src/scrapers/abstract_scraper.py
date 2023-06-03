@@ -2,11 +2,10 @@ from abc import ABC, abstractmethod
 import asyncio
 from collections import deque
 from itertools import chain
-from typing import AsyncGenerator, List, Union
+from typing import AsyncGenerator, List, Union, Any
 from urllib.parse import urlparse
 
 from aiohttp import ClientSession
-from pyparsing import Any
 from pyppeteer import browser
 
 

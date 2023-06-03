@@ -16,6 +16,6 @@ ADD_RESULT = """
 """
 
 SELECT_RESULTS = """
-    SELECT (url, processing_time_second, links_count, path)
+    SELECT url, processing_time_second, links_count, path
     FROM websites
 """
