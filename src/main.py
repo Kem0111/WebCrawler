@@ -1,7 +1,8 @@
 import asyncio
-from src.scrapers.staticscraper import StaticScraper
-from src.scrapers.dynamicscrapper import DynamicScraper
-from src.sitmap_creator import create
+from src.scrapers.scraper_factory import ScraperFactory
+# from src.scrapers.staticscraper import StaticScraper
+# from src.scrapers.dynamicscrapper import DynamicScraper
+from src.sitmap_creator import create_sitemap
 
 
 # def main(url):
@@ -11,6 +12,10 @@ from src.sitmap_creator import create
 #     return url
 
 
+async def main():
+    url = 'https://vk.com'
+    scraper = await ScraperFactory.create_scraper(url)
+    await create_sitemap(scraper.crawl(), scraper.domain)
+
 if __name__ == "__main__":
-    scraper = DynamicScraper('https://dzen.ru/')
-    asyncio.run(create(scraper.crawl(), scraper.domain))
+    asyncio.run(main())

@@ -1,10 +1,13 @@
+from typing import AsyncGenerator
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
 
 
-async def create(crawl, domain):
+async def create_sitemap(urls: AsyncGenerator[str, None],
+                         domain: str) -> None:
+
     urlset = ET.Element("urlset", xmlns=domain)
-    async for url in crawl:
+    async for url in urls:
         url_element = ET.SubElement(urlset, "url")
         loc = ET.SubElement(url_element, "loc")
         loc.text = url
