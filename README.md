@@ -1,6 +1,7 @@
 [![Pytest(+ Linter)](https://github.com/Kem0111/WebCrawler/actions/workflows/webcrawler.yml/badge.svg)](https://github.com/Kem0111/WebCrawler/actions/workflows/webcrawler.yml) <a href="https://codeclimate.com/github/Kem0111/WebCrawler/maintainability"><img src="https://api.codeclimate.com/v1/badges/73f701f36e2eb380c7bb/maintainability" /></a> <a href="https://codeclimate.com/github/Kem0111/WebCrawler/test_coverage"><img src="https://api.codeclimate.com/v1/badges/73f701f36e2eb380c7bb/test_coverage" /></a>
 
 
+---
 
 # My WebCrawler
 
@@ -20,3 +21,46 @@ Sitemap Generation: After the parsing process, a .xml file is generated in the s
 ## ⚠️ Warning
 
 Please note that these parsers do not respect robots.txt and do not operate through proxies. As a result, websites may ban your IP address due to a high number of requests per second. Use responsibly and consider the ethical implications before performing large-scale web scraping.
+
+---
+
+## Getting Started
+
+
+#### Clone the repository
+
+To get started with the project, first clone the repository using the following command:
+
+```
+git clone https://github.com/Kem0111/WebCrawler.git
+```
+
+### If you're using Docker, you can bring up the services with the following command:
+
+```
+docker-compose up -d
+```
+To generate a sitemap, use the `start` command:
+
+```
+docker exec -it web_crawler make start
+```
+You'll be prompted to enter a URL. Enter the URL of the site for which you want to generate a sitemap in the format `http://example.com`. The sitemap will be saved in the `sitemaps` directory at the root of the project locally.
+
+To view additional information, use the `create_csv_with_results` command:
+
+```
+docker exec -it web_crawler make create_csv_with_results
+```
+The results will be saved in a `results.csv` file at the root of the project locally.
+
+### If you're working locally, follow these steps:
+```
+pip/pip3 install poetry
+make install
+```
+
+```
+make start
+make create_csv_with_results
+```
