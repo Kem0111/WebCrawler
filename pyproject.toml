@@ -11,6 +11,10 @@ python = "^3.11"
 beautifulsoup4 = "^4.12.2"
 aiohttp = "^3.8.4"
 pyppeteer = "^1.0.2"
+pytest = "^7.3.1"
+pytest-asyncio = "^0.21.0"
+flake8 = "^6.0.0"
+pytest-cov = "^4.1.0"
 
 [tool.poetry.scripts]
 start = "src.scripts.main:main"

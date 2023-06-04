@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import time
 from src.scrapers.scraper_factory import ScraperFactory
 from src.sitmap_creator import create_sitemap

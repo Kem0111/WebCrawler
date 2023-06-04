@@ -7,5 +7,5 @@ def check_error(url):
     try:
         with urlopen(Request(url)):
             return True
-    except (HTTPError, URLError) as e:
+    except (HTTPError, URLError, ValueError) as e:
         raise UrlNotAccessible(f"Unable to access {url}. Reason: {str(e)}")
