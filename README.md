@@ -34,33 +34,22 @@ To get started with the project, first clone the repository using the following 
 ```
 git clone https://github.com/Kem0111/WebCrawler.git
 ```
-
-### If you're using Docker, you can bring up the services with the following command:
-
 ```
-docker-compose up -d
+pip install poetry
+make install
 ```
+
+
 To generate a sitemap, use the `start` command:
 
 ```
-docker exec -it web_crawler make start
+make start
 ```
 You'll be prompted to enter a URL. Enter the URL of the site for which you want to generate a sitemap in the format `http://example.com`. The sitemap will be saved in the `sitemaps` directory at the root of the project locally.
 
 To view additional information, use the `create_csv_with_results` command:
 
 ```
-docker exec -it web_crawler make create_csv_with_results
-```
-The results will be saved in a `results.csv` file at the root of the project locally.
-
-### If you're working locally, follow these steps:
-```
-pip/pip3 install poetry
-make install
-```
-
-```
-make start
 make create_csv_with_results
 ```
+The results will be saved in a `results.csv` file at the root of the project locally.
